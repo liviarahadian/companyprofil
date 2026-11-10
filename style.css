@@ -1,0 +1,153 @@
+:root{--ink:#14212b;--muted:#5b6b78;--bg:#f2f5f7;--alt:#e4eaf0;--accent:#1d4f91;--accent-d:#143a6c}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito Sans',sans-serif;color:var(--ink);background:var(--bg);line-height:1.7}
+h1,h2,h5,.navbar-brand,.stat{font-family:'Sora',sans-serif}
+section{padding:90px 0;scroll-margin-top:56px}
+section.alt{background:var(--alt)}
+a{color:var(--accent)}
+
+.navbar{background:rgba(242,245,247,.92);backdrop-filter:blur(8px);box-shadow:0 1px 0 rgba(0,0,0,.06)}
+.navbar-brand{font-weight:700;color:var(--ink)}
+.nav-link{color:var(--ink)}
+.nav-link:hover{color:var(--accent)}
+
+.hero{min-height:100vh;display:flex;align-items:center;padding:110px 0 60px}
+.hero h1{font-size:clamp(2.8rem,7vw,5rem);font-weight:700;line-height:1.05;margin-bottom:.4rem}
+.hero-sub{color:var(--accent);font-weight:600;margin-bottom:.4rem}
+.hero-role{font-size:1.3rem;font-weight:600;margin-bottom:.5rem}
+.hero-desc{color:var(--muted);max-width:34em}
+.btn-accent{background:var(--accent);color:#fff;border:0}
+.btn-accent:hover{background:var(--accent-d);color:#fff}
+
+.foto{position:relative;width:min(320px,80vw);aspect-ratio:1;margin:auto;border-radius:50%;background:var(--accent);overflow:hidden}
+.foto::before{content:attr(data-inisial);position:absolute;inset:0;display:grid;place-items:center;color:#fff;font:700 5rem 'Sora',sans-serif}
+.foto img{position:relative;width:100%;height:100%;object-fit:cover;object-position:50% 38%}
+
+.judul{font-weight:700;font-size:1.8rem}
+.judul::after{content:"";display:block;width:48px;height:4px;background:var(--accent);margin-top:10px}
+.stat{font-size:2rem;font-weight:700;color:var(--accent)}
+
+/* ===== KARTU KEAHLIAN ===== */
+section .kartu{
+  height:100%;
+  padding:1.8rem 1.6rem !important;
+  background:linear-gradient(160deg,rgba(255,255,255,.16),rgba(255,255,255,.06)) !important;
+  border:1px solid rgba(255,255,255,.28) !important;
+  border-top:4px solid #8fd0ff !important;
+  border-radius:18px !important;
+  backdrop-filter:blur(8px);
+  box-shadow:0 10px 28px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.35);
+  transition:transform .25s, box-shadow .25s, background .25s;
+}
+section .kartu:hover{
+  transform:translateY(-6px);
+  background:linear-gradient(160deg,rgba(255,255,255,.22),rgba(255,255,255,.1)) !important;
+  box-shadow:0 16px 34px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.45);
+}
+section .kartu h5
+
+.proyek .thumb{aspect-ratio:3/2;background:#cfd9df;border-radius:8px;overflow:hidden;margin-bottom:1rem}
+.proyek .thumb img{width:100%;height:100%;object-fit:cover}
+.proyek h5{font-size:1.1rem;font-weight:700}
+.proyek p{color:var(--muted);margin-bottom:.4rem}
+.proyek small{color:var(--accent-d);font-weight:600}
+
+.form-control:focus{border-color:var(--accent);box-shadow:0 0 0 .2rem rgba(29,79,145,.2)}
+footer{text-align:center;padding:24px 0;background:var(--ink);color:#fff}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* ================================================
+   SELURUH HALAMAN BERLATAR FASAD KACA
+   ================================================ */
+
+/* 1. Ganti warna dasar jadi terang di atas latar gelap */
+:root{
+  --ink:#eaf4ff;
+  --muted:#c3dcf3;
+  --bg:transparent;
+  --alt:transparent;
+  --accent:#8fd0ff;
+  --accent-d:#bfe3ff;
+}
+
+/* 2. Latar fasad: kisi kaca + pantulan + gradasi biru (menempel saat scroll) */
+body{
+  color:#eaf4ff;
+  background:
+    linear-gradient(90deg,rgba(255,255,255,.14) 2px,transparent 2px) 0 0/90px 120px,
+    linear-gradient(rgba(255,255,255,.14) 2px,transparent 2px) 0 0/90px 120px,
+    repeating-linear-gradient(115deg,rgba(255,255,255,.05) 0 40px,transparent 40px 110px),
+    linear-gradient(160deg,#0b2447 0%,#19508f 55%,#3d8bc9 100%);
+  background-attachment:fixed;
+}
+
+/* 3. Section: transparan, selang-seling lebih gelap supaya ada pemisah */
+section{background:transparent}
+section.alt{background:rgba(8,24,48,.35)}
+a{color:#8fd0ff}
+a:hover{color:#fff}
+
+/* 4. Navbar */
+.navbar{background:rgba(8,24,48,.6)}
+.navbar-brand,.nav-link{color:#fff}
+.nav-link:hover{color:#8fd0ff}
+.navbar-toggler{border-color:rgba(255,255,255,.5)}
+.navbar-toggler-icon{filter:invert(1)}
+
+/* 5. Hero: hapus latar sendiri, ikut latar halaman */
+.hero{background:none;color:#fff}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(90deg,rgba(8,24,48,.45),rgba(8,24,48,0) 70%)}
+.hero .container{position:relative;z-index:1}
+.hero h1,.hero-role{color:#fff}
+.hero-sub{color:#8fd0ff}
+.hero-desc{color:#d3e6f7}
+.hero .btn-accent{background:#fff;color:#0b2447}
+.hero .btn-outline-dark{color:#fff;border-color:#fff}
+.hero .btn-outline-dark:hover{background:#fff;color:#0b2447}
+.foto{border:4px solid rgba(255,255,255,.7);box-shadow:0 10px 30px rgba(0,0,0,.35)}
+
+/* 6. Judul, angka, dan tombol */
+.judul{color:#fff}
+.judul::after{background:#8fd0ff}
+.stat{color:#8fd0ff}
+.btn-accent{background:#8fd0ff;color:#0b2447;border:0;font-weight:600}
+.btn-accent:hover{background:#fff;color:#0b2447}
+
+/* 7. Kartu keahlian dan proyek
+/* ===== KARTU PROYEK (gaya sama dengan Keahlian + foto) ===== */
+.kartu-proyek .foto-proyek{
+  aspect-ratio:16/10;
+  border-radius:12px;
+  overflow:hidden;
+  margin-bottom:1.1rem;
+  background:linear-gradient(145deg,rgba(143,208,255,.35),rgba(61,139,201,.35));
+  border:1px solid rgba(255,255,255,.25);
+}
+.kartu-proyek .foto-proyek img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:50% 40%;
+  display:block;
+}
+section .kartu-proyek .lokasi{
+  color:#8fd0ff !important;
+  font-size:.88rem;
+  font-weight:600;
+  margin:0 0 .5rem;
+}
+.kartu-proyek .tag{
+  display:inline-block;
+  margin-top:.9rem;
+  padding:3px 12px;
+  font-size:.82rem;
+  font-weight:600;
+  color:#fff;
+  background:rgba(143,208,255,.22);
+  border:1px solid rgba(143,208,255,.45);
+  border-radius:30px;
+}
+.kartu-proyek{height:auto}
+.kartu-proyek .foto-proyek{aspect-ratio:16/10;max-height:230px}
+section#proyek .row{align-items:stretch}
